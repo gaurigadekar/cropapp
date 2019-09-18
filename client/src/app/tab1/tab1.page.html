@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content color="light">
+  <form #singnIpFrom="ngForm" (ngSubmit)="singnIpFrom.valid && onSubmit(singnIpFrom)">
+    <ion-grid>
+     <ion-row color="primary" justify-content-center>
+   <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+      <div text-center>
+          <h3>Login to your account!</h3>
+        </div>
+   <div padding>
+  <ion-item>
+  <ion-input type="text" #username="ngModel" [(ngModel)]="appservice.model.username" name="username" 
+  placeholder="Enter Username" required></ion-input>
+   <div *ngIf="singnIpFrom.sumitted && !username.valid">
+     <label>This field is required</label>
+   </div>
+  </ion-item>
+  
+  <ion-item>
+  <ion-input type="password" #hash="ngModel" [(ngModel)]="appservice.model.hash" name="hash"
+   placeholder="Enter password" required></ion-input>
+   <div *ngIf="singnIpFrom.sumitted && !password.valid">
+      <label>This field is required</label>
+    </div> 
+  </ion-item>
+  
+  
+  </div>
+  
+  <div padding>
+  <ion-button color="success" type="submit" value="Sign In">Sing In</ion-button>
+  </div>
+  
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+  </form>
+  
+  <div *ngIf="showSuccesloginMessage">
+    login succesfully
+  </div>
+  <div *ngIf="loginserverErrorMessage">
+      {{serverErrorMessage}}
+    </div>
+  
+  <!--Json string = {{singnIpFrom.value | json}}-->
+  
+  </ion-content>
+  

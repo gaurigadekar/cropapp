@@ -1,0 +1,73 @@
+<!-- 
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle> {{ currentUser  }}</ion-card-subtitle>
+      <ion-card-title>Pune,Maharashtra</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+     Select Distributor
+    </ion-card-content>
+  </ion-card>
+    <ion-card>
+      <ion-card-content>
+  
+         <ion-button expand="block" color="success" (click)="SelectProduct(dist)" *ngFor="let dist of lstdistributor">
+           {{dist.dname}},
+           {{dist.daddress}}
+         </ion-button>
+  
+        </ion-card-content>
+  
+        </ion-card>
+      </ion-content>
+    
+   -->
+
+ <!--   <ion-list>
+    <ion-item-sliding *ngFor="let dist of lstdistributor">
+      <ion-item>
+        <ion-card>
+          <img class="ion-img" src="assets/icon/distributors.png">
+            <ion-fab right bottom>
+                <button ion-fab (click)="SelectProduct(dist)">
+                <ion-icon name="brush"></ion-icon>
+              </button>
+              </ion-fab>
+              <div class="card-title"><h1>{{dist.dname}},</h1>
+                {{dist.daddress}}</div>
+
+        </ion-card>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+ -->
+ <ion-card style="border-radius: 25px;">
+    <ion-card-header>
+      <ion-card-subtitle><h2>Hello !!!!!  {{ currentUser  }}</h2></ion-card-subtitle>
+      <ion-card-title><h2>Pune,Maharashtra</h2></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    <h2>Select Distributor</h2> 
+    </ion-card-content>
+  </ion-card>
+
+ <ion-list style="border-radius: 25px;">
+  <ion-item  style="border-radius: 25px;" *ngFor="let dist of lstdistributor">
+          
+
+    <ion-thumbnail slot="start">
+      <ion-img src="assets/icon/distributors.png"></ion-img>
+    </ion-thumbnail>
+   
+
+  
+    <ion-label><h1>{{dist.dname}},</h1><h5>{{dist.daddress}}</h5></ion-label>
+  
+   
+    <button ion-fab (click)="SelectProduct(dist)"><ion-icon name="checkmark-circle"></ion-icon></button>
+  
+  </ion-item>
+</ion-list>

@@ -1,0 +1,42 @@
+<ion-content>
+  <ion-card style="border-radius: 25px;">
+    <ion-card-content>
+
+    <ion-list>
+        <ion-list-header>
+      
+      <ion-img src="assets/icon/distributors.png"></ion-img>
+   
+   <h1>{{currentDist}}</h1></ion-list-header>
+      <ion-item>
+      <ion-label>Fielde Crops </ion-label>
+      <ion-select [(ngModel)]="currentCrop" multiple="false"  (click)="presentAlertConfirm(prd)"  >
+        <ion-select-option *ngFor="let prd of lstproduct" [value]="prd.cropname" >{{prd.cropname}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+ 
+</ion-card-content>
+  <!--  current_GrandTotalQuantity: {{current_GrandTotalQuantity}} -->
+  
+ <!-- <ion-card-content>
+  <ion-list>
+      <ion-item>
+<ion-label>Vegitable crops</ion-label>
+<ion-select [(ngModel)]="currentCrop" multiple="false"  (click)="presentAlertConfirm(vegprd)" > 
+  <ion-select-option *ngFor="let vegprd of lstvegproduct"[value]="vegprd.cropname" >{{vegprd.cropname}}<!-- {{ vegprd.weightInKg}} --</ion-select-option>
+  </ion-select>
+</ion-item>
+
+</ion-list> 
+your order : {{currentcrop}} ={{currentcropgrandtot}}Kg
+
+</ion-card-content> -->
+<ul>
+  <li *ngFor="let element of CurrentorderdtlsArray"> {{element.cropname}}{{element.GrandTotalQuantity}}</li>
+</ul>
+
+<ion-button color="success" (click)="saveArray()">Save Order</ion-button>
+</ion-card>
+</ion-content> 
+<iom-content></iom-content>

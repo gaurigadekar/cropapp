@@ -1,0 +1,113 @@
+
+
+<ion-grid>
+   <form #orderForm="ngForm" (ngSubmit)="orderForm.valid && onSubmit(orderForm)">
+    <ion-header>
+      <ion-title>{{currentDist}}</ion-title>
+        <ion-toolbar>
+            <ion-input type="text" #cropname="ngModel" [(ngModel)]="appservice.kG.cropname" name="cropname" value="{{ cropname }}"></ion-input>
+<!--             <ion-input type="text" #cropname="ngModel" [(ngModel)]="appservice.kG.cropname" name="cropname" value="{{ currentCrop }}"></ion-input>
+ -->        </ion-toolbar>
+      </ion-header>
+      <ion-row>
+      <ion-col>
+        <div>
+          50kg
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="fifty($event)"color="success" value="50" id=50>ADD</ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+          <ion-input type="text" #totalweight50kg="ngModel" [(ngModel)]="appservice.kG.totalweight50kg" name="totalweight50kg" value="{{totalweight}}">{{count}} bags  {{totalweight}}kg</ion-input>
+
+<!--     {{count}} bags {{totalweight}}Kg
+ -->      </ion-col>
+      </ion-row>
+
+        <ion-row>
+          
+          
+          <ion-col>
+                <div>
+                  20kg
+                </div>
+              </ion-col>
+              <ion-col>
+                <div>
+
+                    <ion-button (click)="twenty($event)"color="success" value="20" id=20>ADD</ion-button>
+                </div>
+              </ion-col>
+              <ion-col>
+                  <ion-input type="text" #totalweight20kg="ngModel" [(ngModel)]="appservice.kG.totalweight20kg" name="totalweight20kg" value="{{totalweight1}}">{{count1}} bags  {{totalweight1}}kg</ion-input>
+
+<!--                 {{count1}} bags {{totalweight1}}kg
+ -->                </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                      <ion-col>
+                        <div>
+                          10kg
+                        </div>
+                      </ion-col>
+                      <ion-col>
+                        <div>
+                            <ion-button (click)="ten($event)" color="success" value="10" id=10>ADD</ion-button>
+                        </div>
+                      </ion-col>
+                      <ion-col>
+                          <ion-input type="text" #totalweight10kg="ngModel" [(ngModel)]="appservice.kG.totalweight10kg" name="totalweight10kg" value="{{totalweight2}}">{{count2}} bags  {{totalweight2}}kg</ion-input>
+
+                        <!-- {{count2}} bags {{totalweight2}}kg -->
+                        </ion-col>
+                          </ion-row>
+
+                          <ion-row>
+                              <ion-col>
+                                <div>
+                                  5kg
+                                </div>
+                              </ion-col>
+                              <ion-col>
+                                <div>
+                                    <ion-button (click)="five($event)" color="success" value="5" id=5>ADD</ion-button>
+                                </div>
+                              </ion-col>
+                              <ion-col>
+                                  <ion-input type="text" #totalweight5kg="ngModel" [(ngModel)]="appservice.kG.totalweight5kg" name="totalweight5kg" value="{{totalweight3}}">{{count3}} bags  {{totalweight3}}kg</ion-input>
+
+<!--                                 {{count3}} bags  {{totalweight3}}kg
+ -->                                </ion-col>
+                                  </ion-row>
+
+                                  <ion-row>
+                                      <ion-col>
+                                        <div>
+                                          1kg
+                                        </div>
+                                      </ion-col>
+                                      <ion-col>
+                                        <div>
+                                            <ion-button (click)="One($event)" color="success" value="1" id=1>ADD</ion-button>
+                                        </div>
+                                      </ion-col>
+                                      <ion-col>                                       
+                                          <ion-input type="text" #totalweight1kg="ngModel" [(ngModel)]="appservice.kG.totalweight1kg" name="totalweight1kg" value="{{totalweight4}}">{{count4}} bags  {{totalweight4}}kg</ion-input>
+
+                                       <!--  {{count4}} bags {{totalweight4}}kg -->
+                                        </ion-col>
+                                          </ion-row>
+                                          <ion-input type="text" #GrandTotalQuantity="ngModel" [(ngModel)]="appservice.kG.GrandTotalQuantity" name="GrandTotalQuantity" value="{{totalweight+totalweight1+totalweight2+totalweight3+totalweight4}}">Kg</ion-input>
+                                          <!--<ion-input type="submit" value="save order"></ion-input>-->
+                                       
+    
+                                          <ion-button type="submit" color="success" (click)="presentAlertConfirm()">Add Item</ion-button>
+                                        </form>
+                                                
+                                        </ion-grid>
+  
+

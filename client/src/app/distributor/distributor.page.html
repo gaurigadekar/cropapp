@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>distributor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<div class="col-md-6">
+    <h2> Distributors Details</h2>
+    <!--  <button class="btn btn-danger" (click)="addUser()"> Add User</button>
+-->
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">ID</th>
+       <th>username</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let distr of Distributor">
+        <td class="hidden">Agrostar</td>
+        <td>Lenagri</td>
+        <td>agrostar</td>
+        <td></td>
+       <!-- <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>-->
+         <!-- <button class="btn btn-danger" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>-->
+         
+      </tr>
+      <tr>
+        <td>username</td>
+        <td>FirstName</td>
+         <td>lastname</td> 
+         <td></td>
+      </tr>
+
+
+
+      </tbody>
+    </table>
+  </div>
+
+
+  
+
+</ion-content>

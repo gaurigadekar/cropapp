@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+<form #singnUpFrom="ngForm" (ngSubmit)="singnUpFrom.valid && onSubmit(singnUpFrom)">
+  <ion-grid>
+   <ion-row color="primary" justify-content-center>
+ <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+    <div text-center>
+        <h3>Create your account!</h3>
+      </div>
+ <div padding>
+<ion-item>
+<ion-input type="text" #username="ngModel" [(ngModel)]="appservice.users.username" name="username" 
+placeholder="Enter Username" required></ion-input>
+ <div *ngIf="singnUpFrom.sumitted && !username.valid">
+   <label>This field is required</label>
+ </div>
+</ion-item>
+
+<ion-item>
+<ion-input type="password" #hash="ngModel" [(ngModel)]="appservice.users.hash" name="hash"
+ placeholder="Enter password" required></ion-input>
+ <div *ngIf="singnUpFrom.sumitted && !password.valid">
+    <label>This field is required</label>
+  </div> 
+</ion-item>
+
+<ion-item>
+<ion-input type="text" #firstName="ngModel" [(ngModel)]="appservice.users.firstName" name="firstName"
+ placeholder="Enter firstName" required></ion-input>
+ <div *ngIf="singnUpFrom.sumitted && !firstName.valid">
+    <label>This field is required</label>
+  </div>
+</ion-item>
+
+<ion-item>
+<ion-input type="text" #lastName="ngModel" [(ngModel)]="appservice.users.lastName" name="lastName"
+ placeholder="Enter lastName" required></ion-input>
+ <div *ngIf="singnUpFrom.sumitted && !lastName.valid">
+    <label>This field is required</label>
+  </div>
+</ion-item>
+
+
+<ion-item>
+<ion-input type="text" #Date="ngModel" [(ngModel)]="appservice.users.Date" name="Date" 
+placeholder="Enter Date" ></ion-input>
+
+</ion-item>
+
+</div>
+
+<div padding>
+<ion-input type="submit" value="Sign Up"></ion-input>
+</div>
+
+</ion-col>
+</ion-row>
+</ion-grid>
+</form>
+
+<div *ngIf="showSuccesMessage">
+  Saved succesfully
+</div>
+<div *ngIf="serverErrorMessage">
+    {{serverErrorMessage}}
+  </div>
+
+
+</ion-content>
